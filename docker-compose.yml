@@ -1,0 +1,35 @@
+version: '3.1'
+services:
+    mariadb:
+        image: 'mariadb:10.6'
+        working_dir: /application
+        volumes:
+            - '.:/application'
+        environment:
+            - MYSQL_ROOT_PASSWORD=uRZI2T)mwu
+            - MYSQL_DATABASE=base
+            - MYSQL_USER=base
+            - MYSQL_PASSWORD=base123
+        ports:
+            - '8081:3306'
+
+    webserver:
+        image: 'nginx:alpine'
+        working_dir: /application
+        volumes:
+            - '.:/application'
+            - './docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf'
+        ports:
+            - '8080:80'
+
+    php-fpm:
+        build: docker/php-fpm
+        working_dir: /application
+        volumes:
+            - '.:/application'
+
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - "8095:8080"

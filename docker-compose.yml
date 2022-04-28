@@ -6,8 +6,8 @@ services:
         volumes:
             - '.:/application'
         environment:
-            - MYSQL_ROOT_PASSWORD=uRZI2T)mwu
-            - MYSQL_DATABASE=base
+            - MYSQL_ROOT_PASSWORD=1234
+            - MYSQL_DATABASE=miniproject
             - MYSQL_USER=base
             - MYSQL_PASSWORD=base123
         ports:
@@ -33,3 +33,5 @@ services:
         restart: always
         ports:
             - "8095:8080"
+
+

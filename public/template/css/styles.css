@@ -1,3 +1,4 @@
+
 #wrapper{
 	
 	width: 500px;
@@ -28,4 +29,8 @@ textarea.form-control{
 	resize: vertical;
 	text-align: justify;
 	
+}
+
+a{
+	text-decoration: none;
 }
